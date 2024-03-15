@@ -1,0 +1,10 @@
+[Unit]
+Description=Wake
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/busybox httpd -vv -p 80 -c /home/max/httpd.conf -f
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
