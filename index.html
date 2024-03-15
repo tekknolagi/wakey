@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>wakey</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			button {
+				/* https://jameshfisher.com/2024/03/12/a-formula-for-responsive-font-size/ */
+				font-size: calc(1rem + 0.25vw);
+				width: 30vh;
+				height: 10vh;
+			}
+		</style>
+	</head>
+	<body>
+		<form target=htmz>
+			<button formaction="/cgi-bin/wake.cgi#wake-response">WAKE ME UP (wake me up inside)</button>
+			<button formaction="/cgi-bin/sleep.cgi#wake-response">Go to sleep</button>
+		</form>
+		<div id="wake-response"></div>
+		<!-- https://leanrada.com/htmz/ -->
+		<iframe hidden name=htmz onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))"></iframe>
+	</body>
+</html>
