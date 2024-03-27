@@ -1,0 +1,11 @@
+[Unit]
+Description=Sleep on LAN
+
+[Service]
+Type=simple
+# https://github.com/SR-G/sleep-on-lan
+ExecStart=/home/max/go/bin/sleep-on-lan
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
