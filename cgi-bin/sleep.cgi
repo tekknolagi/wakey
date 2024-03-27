@@ -2,13 +2,14 @@
 import subprocess
 print("Content-Type: text/html")
 print()
-print("Hello!")
-# TODO(max): Log in and send to sleep
-# result = subprocess.run(["wakeonlan", "38:d5:47:e1:e9:15"], capture_output=True)
-# if result.returncode != 0:
-#     print("<pre>")
-#     print("stderr:", result.stderr.decode('utf-8'))
-#     print("stdout:", result.stdout.decode('utf-8'))
-#     print("</pre>")
-# else:
-#     print("He has risen")
+# The MAC is reversed because that's how sleep-on-lan works
+# The port is 8009 because I did not feel like letting it run on a privileged
+# port (9)
+result = subprocess.run(["wakeonlan", "15:e9:e1:47:d5:38", "-p", "8009"], capture_output=True)
+if result.returncode != 0:
+    print("<pre>")
+    print("stderr:", result.stderr.decode('utf-8'))
+    print("stdout:", result.stdout.decode('utf-8'))
+    print("</pre>")
+else:
+    print("Goodnight sweet prince")

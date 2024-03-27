@@ -3,8 +3,8 @@ Description=Sleep on LAN
 
 [Service]
 Type=simple
-# https://github.com/SR-G/sleep-on-lan
-ExecStart=/home/max/go/bin/sleep-on-lan
+# The config has the UDP port set to 8009 instead of 9
+ExecStart=/home/max/go/bin/sleep-on-lan --config /home/max/.config/sleep-on-lan.json
 Restart=on-failure
 
 [Install]
