@@ -12,4 +12,4 @@ if result.returncode != 0:
     print("stdout:", result.stdout.decode('utf-8'))
     print("</pre>")
 else:
-    print("Goodnight sweet prince")
+    print('<div id="wake-response">Goodnight sweet prince</div>')

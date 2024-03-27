@@ -9,4 +9,4 @@ if result.returncode != 0:
     print("stdout:", result.stdout.decode('utf-8'))
     print("</pre>")
 else:
-    print("He has risen")
+    print('<div id="wake-response">He has risen</div>')
