@@ -12,6 +12,7 @@
 				height: 10vh;
 			}
 		</style>
+    <script>function R(t) { t.replaceWith(...t.contentDocument.body.childNodes); }</script>
 	</head>
 	<body>
 		<form target=htmz>
@@ -19,6 +20,7 @@
 			<button formaction="/cgi-bin/sleep.cgi#wake-response">Go to sleep</button>
 		</form>
 		<div id="wake-response"></div>
+    <div>Status: <iframe hidden src="/cgi-bin/status.cgi" onload="R(this)"></div>
 		<!-- https://leanrada.com/htmz/ -->
 		<iframe hidden name=htmz onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))"></iframe>
 	</body>
