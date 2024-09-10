@@ -1,31 +1,31 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>wakey</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-      @media (max-width: 600px) {
-        button {
-          width: 100%;
-          height: 100px;
-          font-size: calc(8vw);
-        }
-        body {
-          font-size: calc(8vw);
-        }
-      }
-		</style>
+  <head>
+    <title>wakey</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+@media (max-width: 600px) {
+  button {
+    width: 100%;
+    height: 100px;
+    font-size: calc(8vw);
+  }
+  body {
+    font-size: calc(8vw);
+  }
+}
+    </style>
     <script>function R(t) { t.replaceWith(...t.contentDocument.body.childNodes); }</script>
-	</head>
-	<body>
-		<form target=htmz>
-			<button formaction="/cgi-bin/wake.cgi#wake-response">WAKE ME UP (wake me up inside)</button>
-			<button formaction="/cgi-bin/sleep.cgi#wake-response">Go to sleep</button>
-		</form>
-		<div id="wake-response"></div>
-    <div>Status: <iframe hidden src="/cgi-bin/status.cgi" onload="R(this)"></div>
-		<!-- https://leanrada.com/htmz/ -->
-		<iframe hidden name=htmz onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))"></iframe>
-	</body>
+  </head>
+  <body>
+    <form target=htmz>
+      <button formaction="/cgi-bin/wake.cgi#wake-response">WAKE ME UP (wake me up inside)</button>
+      <button formaction="/cgi-bin/sleep.cgi#wake-response">Go to sleep</button>
+    </form>
+    <div id="wake-response"></div>
+    <div>Status: <iframe hidden src="/cgi-bin/status.cgi" onload="R(this)"></iframe></div>
+    <!-- https://leanrada.com/htmz/ -->
+    <iframe hidden name=htmz onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))"></iframe>
+  </body>
 </html>
