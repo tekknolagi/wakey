@@ -16,8 +16,8 @@
     },
     marks: [
       Plot.line(data, Plot.windowY(14, {x: "date", y: "CO2", stroke: "#4e79a7"})),
-      Plot.ruleY([400, 800, 1000])  // outside, uh oh, v bad
-    ]
+      Plot.ruleY([400, 800, 1000]),  // outside, uh oh, v bad
+    ],
   });
   const div = document.querySelector("#myplot");
   div.append(plot);
