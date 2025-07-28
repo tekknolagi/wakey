@@ -13,7 +13,9 @@ res = cur.execute("""
         LIMIT 100
     ) ORDER BY timestamp ASC
 """)
-rows = [{"device": r[0], "timestamp": str(r[1]), "CO2": r[2]} for r in res.fetchall()]
+def minus_four_hours(timestamp):
+    return timestamp - 60 * 60 * 4
+rows = [{"device": r[0], "timestamp": str(minus_four_hours(r[1])), "CO2": r[2]} for r in res.fetchall()]
 print("Content-Type: application/json")
 print()
 print(json.dumps(rows))
