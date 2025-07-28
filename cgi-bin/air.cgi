@@ -13,9 +13,7 @@ res = cur.execute("""
         LIMIT 100
     ) ORDER BY timestamp ASC
 """)
-def pt_to_et(timestamp):
-    return timestamp - 60 * 60 * 3
-rows = [{"device": r[0], "timestamp": str(pt_to_et(r[1])), "CO2": r[2]} for r in res.fetchall()]
+rows = [{"device": r[0], "timestamp": str(r[1]), "CO2": r[2]} for r in res.fetchall()]
 print("Content-Type: application/json")
 print()
 print(json.dumps(rows))
