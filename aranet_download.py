@@ -3,7 +3,6 @@ from datetime import datetime, timezone, timedelta
 import os
 import sqlite3
 import time
-
 import aranet4
 
 NUM_RETRIES = 10
